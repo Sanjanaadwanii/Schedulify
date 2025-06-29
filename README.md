@@ -20,13 +20,3 @@
 - 💡 (Pluggable C++ backend planned via WebAssembly)
 
 ---
-
-## 🗂️ File Structure
-
-Schedulify/
-├── index.html # Homepage
-├── fcfs.html, sjf_np.html # Individual algorithm pages
-├── css/
-│ └── responsive.css # Shared enhanced UI styling
-├── js/
-│ └── fcfs.js, sjf_np.js # Visual logic & simulation
