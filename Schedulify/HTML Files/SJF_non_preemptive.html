@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SJF Scheduling (Non-Preemptive)</title>
+  <link rel="stylesheet" href="/CSS Files/SJF_non_preemptive.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>SJF (Non-Preemptive)</h2>
+      <div id="description">
+        <h3>Overview</h3>
+        <p>
+          Shortest Job First (SJF) Non-Preemptive Scheduling selects the process with the shortest burst time from the ready queue. Once selected, it runs to completion.
+        </p>
+      </div>
+      <div id="input-section">
+        <div id="process-inputs"></div>
+        <button onclick="addProcess()">+ Add Process</button>
+        <button onclick="runSJFNonPreemptive()">Run Simulation</button>
+        <button onclick="resetAll()">Reset</button>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <h2>Gantt Chart</h2>
+      <div id="gantt-chart">
+        <div id="gantt-placeholder">⏳ Gantt chart will appear here after simulation</div>
+      </div>
+      <h2>Running & Waiting Queues</h2>
+<div id="queues">
+  <div class="queue-section">
+    <h3>Running</h3>
+    <div id="running-queue" class="queue-box">Empty</div>
+  </div>
+  <div class="queue-section">
+    <h3>Waiting</h3>
+    <div id="waiting-queue" class="queue-box">Empty</div>
+  </div>
+</div>
+
+<label for="speed">Speed:</label>
+<input type="range" id="speed" min="0.25" max="2" value="1" step="0.25" />
+<span id="speed-value">1x</span>
+
+      <h2>Process Table</h2>
+      <table id="process-table" border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>PID</th>
+            <th>Arrival</th>
+            <th>Burst</th>
+            <th>Start</th>
+            <th>Completion</th>
+            <th>Waiting</th>
+            <th>Turnaround</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div id="averages" style="margin-top: 20px;"></div>
+    </div>
+  </div>
+
+  <script src="/JS Files/SJF_non_preemptive.js"></script>
+  <script>
+  const speedSlider = document.getElementById("speed");
+  const speedValue = document.getElementById("speed-value");
+
+  speedSlider.addEventListener("input", () => {
+    speedValue.textContent = speedSlider.value + "x";
+  });
+  </script>
+</body>
+</html>
